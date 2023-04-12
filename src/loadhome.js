@@ -2,7 +2,7 @@ import image from './pictures/fernando-andrade-nAOZCYcLND8-unsplash.jpg';
 
 export default function (){
     const wrapper = document.createElement('div');
-    content.classList.add('wrapper');
+    wrapper.classList.add('wrapper');
 
     const main = document.createElement('div');
     main.classList.add('main');
@@ -22,11 +22,18 @@ export default function (){
     bg.classList.add('background');
     const img = new Image();
     img.src = image;
-    const imgCred = document.createElement('p');
-    imgCred.textContent = "photo by Fernando Andrade"
+
+    const photoCredit = document.createElement('p');
+    photoCredit.textContent = 'photo by '
+
+    const link = document.createElement('a');
+    link.href = "https://unsplash.com/@thisisnando";
+    link.textContent = 'Fernando Andrade';
+
+    photoCredit.append(link);
+
     img.addEventListener('load', () => {
-        bg.appendChild(img);
-        bg.appendChild(imgCred);
+        bg.append(img, photoCredit);
         wrapper.append(main, bg);
     });
 

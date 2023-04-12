@@ -1,90 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto:wght@100;400;900&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: var(--brown);
+
+
     --orange: #b43b00;
     --green: #103c2c;
     --brown: #281413;
     --yellow: #ffc95a;
-
-    color: var(--brown);
-
+    --blue: #effafa;
+    --fontlogo: 'Indie Flower', cursive;
 }
 
 .header {
+    height: 75px;
     display: flex;
     justify-content: center;
-    background-color: var(--orange);
-    box-shadow: 0 5px 2px var(--brown);
+    z-index: 4;
+    background-image: linear-gradient(var(--yellow), var(--blue));
 }
 
 .header button {
-    background-color: var(--orange);
+    background-color: inherit;
     border: none;
     cursor: pointer;
+    font-family: var(--fontlogo);
     font-size: 50px;
+    color: var(--brown);
     width: 200px;
     transition: all 350ms;
     border-radius: 2px;
-    font-family: inherit;
+    opacity: 0.5;
 }
 
 .header button:hover {
-    background-color: var(--yellow);
     color: var(--green);
-    box-shadow: 0 0 10px var(--yellow);
+    font-size: 55px;
+    opacity: 1;
+    text-decoration: underline;
 }
 
 .header button:active {
-    color: black;
+    color: var(--brown);
+    text-decoration: none;
 }
 
 .content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--blue);
+    transition: all 350ms;
+}
+
+.wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
 }
 
 .main {
     padding: 50px;
-    text-align: center;
     z-index: 2;
-}
-
-.main * {
-
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 .main h1 {
+    position: relative;
+    left: 8rem;
+    font-family: var(--fontlogo);
     font-size: 5rem;
+    color: var(--green);
     letter-spacing: -0.5rem;
     transform: rotate(-5deg);
 }
 
 .main h2 {
+    font-family: var(--fontlogo);
+    color: var(--orange);
     position: relative;
     transform: rotate(-2deg);
-    margin-top: -1.5rem;
-    left: 1.2rem;
+    margin-top: -2.5rem;
+    left: 11rem;
+    transition: all 350ms;
+}
+
+.main p {
+    position: relative;
+    left: 10rem;
+    margin: 25px;
+    max-width: 400px;
+    transform: rotate(-2.5deg);
+    line-height: 1.5rem;
+    text-indent: 1rem;
+}
+
+.main * {
+    transition: all 350ms;
+}
+.main *:hover {
+    opacity: 0.7;
 }
 
 .background {
     z-index: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    position: absolute;
-    width: 100%;
-
 }
 
-.background image {
-    flex: 1;
+.background img {
     z-index: 1;
+    height: calc(100vh - 75px);
 }
 
 .background p {
     z-index: 2;
-    position: relative;
-    top: -1.5rem;
-    right: -200px;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
     opacity: 0.4;
+    font-family: var(--fontlogo);
 }
+
+.background p a {
+    text-decoration: none;
+    font-family: inherit;
+}
+
+.background p a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* menu */
+.menu img {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+}
+
+.menu .item {
+    display: flex;
+}
+
+.menu:nth-child(even) .imageContainer {
+    order: 2;
+}
+
+.menu:nth-child(even) p {
+    order: 1;
+}
+
