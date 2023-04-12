@@ -1,6 +1,7 @@
 import home from './loadhome';
 import menu from './loadmenu';
 import contact from './loadcontact';
+import './style.css';
 
 const header = (function(){
     const header = document.createElement('div');
@@ -24,12 +25,14 @@ const header = (function(){
 
 const content = document.querySelector('.content');
 
-function load(element) {
+function load(element = home) {
     if (content.lastElementChild){
         content.removeChild(content.lastElementChild);
     }
     content.append(element());
 }
+
+load();
 
 
 
