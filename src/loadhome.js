@@ -18,8 +18,8 @@ export default function (){
 
     main.append(h1, h2, p);
 
-    const bg = document.createElement('div');
-    bg.classList.add('background');
+    const imageContainer = document.createElement('div');
+    imageContainer.classList.add('imageContainer');
     const img = new Image();
     img.src = image;
 
@@ -33,8 +33,8 @@ export default function (){
     photoCredit.append(link);
 
     img.addEventListener('load', () => {
-        bg.append(img, photoCredit);
-        wrapper.append(main, bg);
+        imageContainer.append(img, photoCredit);
+        wrapper.append(main, imageContainer);
     });
 
     return wrapper;
