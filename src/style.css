@@ -53,6 +53,12 @@ body {
     text-decoration: none;
 }
 
+@media screen and (max-width: 600px) {
+    .header button {
+        transform: scale(0.5);
+    }
+}
+
 .content {
     width: 100vw;
     height: 100vh;
@@ -167,6 +173,15 @@ p {
     text-decoration: underline;
 }
 
+@media screen and (max-width: 600px) {
+    .main h1{
+        left: 10rem;
+    }
+    .wrapper .imageContainer p {
+        right: 10rem;
+    }
+}
+
 /* menu */
 .menu {
     display: flex;
@@ -222,13 +237,20 @@ p {
     justify-content: center;
 }
 
-@media  screen and (min-width: 600px) {
+.menu .textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+@media screen and (min-width: 600px) {
     .menu .item:nth-child(even) .imageContainer{
         order: 1;
     }    
 }
 
-@media screen and  (max-width: 600px) {
+@media screen and (max-width: 600px) {
     .menu .item {
         flex-direction: column;
         height: 500px;
@@ -237,15 +259,7 @@ p {
     .menu .textContainer p {
         align-self: center;
     }
-
 }
-.menu .textContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-}
-
 
 /* CONTACT */
 
