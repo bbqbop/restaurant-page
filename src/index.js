@@ -23,6 +23,16 @@ const header = (function(){
     document.body.prepend(header);
 })();
 
+const footer = (function() {
+    const footer = document.createElement('div');
+    footer.classList.add('footer');
+    const p = document.createElement('p');
+    p.textContent = "© Dierk Peters 23"
+
+    footer.append(p)
+    document.body.append(footer)
+})();
+
 const content = document.querySelector('.content');
 
 function load(element = home) {

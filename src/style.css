@@ -15,6 +15,11 @@
     --fontlogo: 'Indie Flower', cursive;
 }
 
+body {
+    position: relative;
+    height: 100vh;
+}
+
 .header {
     height: 75px;
     display: flex;
@@ -55,6 +60,15 @@
     transition: all 350ms;
 }
 
+.footer {
+    position: fixed;
+    bottom: 0;
+    right: 1rem;
+    z-index: 5;
+}
+
+/* general styles */
+
 h1 {
     position: relative;
     font-family: var(--fontlogo);
@@ -78,6 +92,24 @@ p {
     transform: rotate(-2.5deg);
     line-height: 1.5rem;
     text-indent: 1rem;
+}
+
+.imageContainer {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.imageContainer img {
+    z-index: 1;
+    height: calc(100vh - 75px);
+}
+
+.imageContainer p, .footer p {
+    z-index: 2;
+    position: relative;
+    opacity: 0.4;
+    font-family: var(--fontlogo);
 }
 
 /* HOME */
@@ -119,24 +151,6 @@ p {
     opacity: 0.7;
 }
 
-.imageContainer {
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.imageContainer img {
-    z-index: 1;
-    height: calc(100vh - 75px);
-}
-
-.imageContainer p {
-    z-index: 2;
-    position: relative;
-    opacity: 0.4;
-    font-family: var(--fontlogo);
-}
-
 .wrapper .imageContainer p {
     align-self: flex-end;
     right: 5rem;
@@ -165,11 +179,16 @@ p {
     height: 250px;
     width: 250px;
     border-radius: 50%;
+    transition: all 350ms;
+}
+
+.menu img:hover {
+    transform: rotate(-12.5deg);
 }
 
 .menu .item {
     display: flex;
-    height: 280px;
+    height: 300px;
     width: 100%;
 }
 
@@ -193,10 +212,6 @@ p {
     align-items: center;
 }
 
-.menu .item:nth-child(even) .imageContainer{
-    order: 1;
-}
-
 .menu .imageContainer p {
     transform: rotate(-2.5deg);
 }
@@ -207,27 +222,36 @@ p {
     justify-content: center;
 }
 
+@media  screen and (min-width: 600px) {
+    .menu .item:nth-child(even) .imageContainer{
+        order: 1;
+    }    
+}
+
+@media screen and  (max-width: 600px) {
+    .menu .item {
+        flex-direction: column;
+        height: 500px;
+        width: 100%;
+    }
+    .menu .textContainer p {
+        align-self: center;
+    }
+
+}
 .menu .textContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-
-}
-
-.menu .textContainer p {
-    position: relative;
-    max-width: 400px;
-    transform: rotate(-2.5deg);
-    line-height: 1.5rem;
-    text-indent: 1rem;
 }
 
 
 /* CONTACT */
 
-.contact .main {
-
+.contact h2 {
+    left: 3rem;
+    top: -2.5rem;
 }
 
 .contact {
@@ -238,6 +262,39 @@ p {
 
 .contact .contactForm {
     width: 350px;
+}
+
+.contact fieldset {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: solid 1px var(--brown);
+    border-radius: 15px;
+}
+
+.contact label {
+    font-family: var(--fontlogo);
+    padding: 10px;
+}
+
+.contact input, textarea {
+    padding: 5px;
+    display: block;
+    border: solid 1px black;
+    border-radius: 15px;
+}
+
+.contact input:focus, textarea:focus {
+    outline: 2px solid var(--orange);
+}
+
+.contact textarea {
+    padding: 5px;
+    height: 10ch;
+}
+
+.contact .addressInfo {
+    margin-top: 30px;
+    text-align: center;
 }

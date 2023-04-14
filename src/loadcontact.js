@@ -42,27 +42,14 @@ export default function (){
 
         form.append(fieldSet);
 
-        // const lastName = document.createElement('input');
-        // lastName.type = 'text';
-        // lastName.classList.add('lastName');
-
-        // const email = document.createElement('input');
-        // email.type = 'email';
-        // email.classList.add('email');
-
-        // const msg = document.createElement('textarea');
-        // msg.classList.add('msg');
-
-        // const submit = document.createElement('button');
-        // submit.type = 'button';
-        // submit.textContent = 'Send';
-        // submit.classList.add('submit');
-
-
         return form;
     })();
 
-    contactContainer.append(title, contactForm);
+    const addressInfo = document.createElement('div');
+    addressInfo.classList.add('addressInfo');
+    addressInfo.innerText = 'Froutes\n1234 Berry Street\n Big Apple \n NY 11220'
+
+    contactContainer.append(title, contactForm, addressInfo);
 
     return contactContainer;
 }
